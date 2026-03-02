@@ -6,35 +6,29 @@ Leadership wanted to understand which channels bring high value customers, not j
 
 However, the dataset doesn't include marketing spend or budget information, so measuring ROI is not possible.
 
-That's why I focused on customer value and revenue volume proxy metrics to identify which channels have higher business impact.
+That's why I focused on customer value and channel contribution proxy metrics to identify which channels have higher business impact.
 
 ---
 
 ## 2. Executive Summary
 
-This analysis evaluated acquisition channel performance to determine which channels drive the highest customer value versus the greatest revenue scale. Due to the absence of marketing spend data, performance was assessed using proxy metrics including Average Revenue per Customer (ARPC), Repeat Customer Rate (RCR), Average Order Value (AOV), and channel share of total revenue and customers.
+This analysis evaluated channel performance to determine which channels drive the highest customer value versus the greatest revenue scale. Due to the absence of marketing spend data, performance was assessed using proxy metrics including Average Revenue per Customer (ARPC), Repeat Customer Rate (RCR), Average Order Value (AOV), and channel share of total revenue and customers.
 
 The results reveal a clear value–scale tradeoff:
 
-**_Affiliate_** drives the strongest per-customer value, with the highest ARPC, AOV, and repeat purchase rate. However, it contributes less than 5% of total revenue due to limited customer acquisition volume.
+**_`Affiliate`_** drives the strongest per-customer value, with the highest ARPC, AOV, and repeat purchase rate. However, it contributes less than 5% of total revenue due to limited customer acquisition volume.
 
-**_Direct_** accounts for approximately 80% of both customers and total revenue, making it the dominant revenue driver. However, its per-customer value metrics are lower than **_Affiliate_**, suggesting scale rather than superior customer quality drives its impact.
+**_ `Direct`_** accounts for approximately 80% of both customers and total revenue, making it the dominant revenue driver. However, its per-customer value metrics are lower than **_`Affiliate`_**.
 
-**_Email_** demonstrates strong retention performance, indicating effective lifecycle marketing influence despite low order value and moderate revenue contribution.
+**_`Email`_** demonstrates strong retention performance, indicating effective lifecycle marketing influence despite low order value and moderate revenue contribution.
 
-Overall, **_Affiliate_** appears to attract higher-value customers but lacks scale, while Direct dominates revenue contribution but may reflect attribution or brand-driven traffic effects. So strategic decisions should balance customer quality with acquisition volume and validate attribution accuracy before reallocating investment.
+Overall, **_`Affiliate`_** appears to attract higher-value customers but lacks scale, while Direct dominates revenue contribution but may reflect attribution or brand-driven traffic effects. So strategic decisions should balance customer quality with acquisition volume and validate attribution accuracy before reallocating investment.
 
 ## 3. Business Objective
 
-**Primary Question**
+### **Primary Question**
 
-> We’re investing across a bunch of channels, but leadership keeps asking which ones are actually worth the money. Can you help us understand how different channels perform—not just in volume, but in quality?
-
-**Constraints**
-
-- No spend/cost data available
-
-- Attribution inconsistencies in some records
+***We’re investing across a bunch of channels, but leadership keeps asking which ones are actually worth the money. Can you help us understand how different channels perform—not just in volume, but in quality?***
 
 ---
 
@@ -42,21 +36,29 @@ Overall, **_Affiliate_** appears to attract higher-value customers but lacks sca
 
 Each row represents a product-level transaction within an order. It includes:
 
-`**Customer ID**`
+**`CUSTOMER ID`**
 
-`**Order ID**`
+**`ORDER ID`**
 
-`**Purchase timestamp**`
+**`PURCHASE TS`**
 
-`**Product and price information**`
+**`SHIP TS`**
 
-`**Marketing channel**`
+**`PRODUCT NAME`**
 
-`**Account creation method**`
+**`PRODUCT ID`**
 
-`**Country**`
+**`PRICE`**
 
-### Dataset size: ~22K Rows
+**`PURCHASE PLATFORM`**
+
+**`MARKETING CHANNEL`**
+
+**`ACCOUNT CREATION METHOD`**
+
+**`COUNTRY`**
+
+***Dataset size: ~22K Rows***
 
 ---
 
@@ -124,13 +126,13 @@ Before analysis, I did sanity checks and data validation.
 
 ## 7. Exploratory Analysis Highlights
 
-- **A visible dip in Direct and Email performance in early 2020 suggests potential macroeconomic or operational disruption. However, further cohort or attribution analysis would be required to validate causality.**
+**Exploratory trend analysis revealed a temporary decline in Direct and Email performance in early 2020, followed by sustained recovery later in the year. Affiliate and Social channels showed relatively stable acquisition patterns. Further cohort or attribution analysis would be required to validate underlying drivers.**
 
-- **Affiliate and Social channels showed relatively stable acquisition patterns**
+[View EDA](https://public.tableau.com/app/profile/muhtasim.mahdi/viz/GamezoneEDA/Sheet1)
 
-- **Attribution leakage or lifecycle marketing effect possible**
+<img width="1920" height="1040" alt="EDA" src="https://github.com/user-attachments/assets/80662c86-78ca-4933-b299-d83fc18025f3" />
 
-This would require cohort or attribution analysis to confirm.
+***Further cohort or attribution analysis would be required to validate causality.***
 
 ---
 
@@ -158,14 +160,18 @@ Likely reflects brand loyalty, repeat purchasing, or attribution limitations rat
 
 3. **Email Channel → Strong Retention**
 
-Strong repeat customer percentage
+- Strong repeat customer percentage (~8.7%)
 
-Moderate revenue contribution (~10%)
-
-Suggests lifecycle marketing impact
+- Moderate revenue contribution (~10%)
 
 **_Interpretation_**:
-Email demonstrates strong retention signals, suggesting effective lifecycle marketing impact despite low order value and moderate revenue contribution.
+Email demonstrates strong retention signals despite low order value and moderate revenue contribution.
+
+[View Dashboard (Best Viewed in Full Screen)](https://public.tableau.com/app/profile/muhtasim.mahdi/viz/gamezone-marketing-channel-performance-dashboard/MarketingChannelPerformance)
+
+
+<img width="1595" height="1045" alt="dashboard" src="https://github.com/user-attachments/assets/d8453aaa-d72f-4a5d-b96f-97d900b65e72" />
+
 
 ---
 
@@ -195,7 +201,7 @@ Email demonstrates strong retention signals, suggesting effective lifecycle mark
 
 ## 10. Limitations
 
-- ROI and channel efficiency could not be evaluated due to the absence of marketing spend data
+- ROI could not be evaluated due to the absence of marketing spend data
 
 - Attribution inconsistencies may skew channel performance
 
